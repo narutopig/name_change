@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import { readFileSync } from "fs";
 import { IGetToken, getToken, changeName } from "./functions";
 import path from "path";
@@ -33,7 +32,7 @@ async function main() {
     );
     setTimeout(async () => {
         await changeName(name, accessToken).then((res) => console.log(res));
-    }, parseInt(timeout) - new Date().getTime());
+    }, parseInt(timeout) - new Date().getTime() - 100);
 }
 
 main();
